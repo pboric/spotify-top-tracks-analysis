@@ -1,31 +1,40 @@
-# Spotify Top Tracks Analysis
+# Spotify Top 50 Tracks of 2020
 
-Analyzing the top tracks on Spotify. Useing pandas, numpy, and opendatasets libraries to download, manipulate, and analyze the data.
+Exploratory analysis of Spotify's 50 most streamed tracks of 2020 with pandas: artists, albums, genres, track
+length and audio features such as danceability, loudness and acousticness.
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/pboric/spotify-top-tracks-analysis/blob/main/Top_50_Spotify_Tracks_of_2020.ipynb)
+
+## Key findings
+
+- **Billie Eilish, Dua Lipa and Travis Scott** have three tracks each in the top 50; in total 40 artists and 45
+  albums appear. Dua Lipa's *Future Nostalgia* is the only album with three tracks.
+- **Pop** is the most common of 16 genres.
+- *SICKO MODE* is the longest track and *Mood (feat. iann dior)* the shortest.
+- **Energy and loudness** are the only strongly correlated audio features (r = 0.79); no pair is strongly negatively
+  correlated.
+- Hip-Hop/Rap (0.77) and Dance/Electronic (0.76) are the most danceable genres; Alternative/Indie is by far the most
+  acoustic (0.58, against 0.10 for Dance/Electronic).
+
+## What the notebook covers
+
+Each section answers one question: the size of the dataset, artists and albums with several hits, the most popular
+artist and genre, tracks above or below danceability and loudness thresholds, the longest and shortest tracks,
+correlations between audio features, and genre comparisons.
+
+## Run it
+
+```bash
+pip install -r requirements.txt
+jupyter notebook Top_50_Spotify_Tracks_of_2020.ipynb
+```
+
+The notebook downloads the data from Kaggle with `opendatasets`, which asks for your Kaggle username and API key.
 
 ## Data
 
-The data is downloaded directly from Kaggle using the opendatasets library. The dataset is located at 'https://www.kaggle.com/datasets/atillacolak/top-50-spotify-tracks-2020'. After downloading, the data is loaded from a CSV file named 'spotifytoptracks.csv' located in the 'top-50-spotify-tracks-2020' directory.
+[Top 50 Spotify Tracks 2020](https://www.kaggle.com/datasets/atillacolak/top-50-spotify-tracks-2020) on Kaggle.
 
-## Features
+## License
 
-The script performs the following analyses:
-
-1. Prints the number of observations and features in the dataset.
-2. Lists all the categorical and numeric features.
-3. Identifies artists and albums with more than one popular track.
-4. Identifies the most popular artist(s).
-5. Prints the total number of unique artists and albums.
-6. Lists tracks based on their danceability and loudness scores.
-7. Identifies the longest and shortest tracks.
-8. Identifies the most popular genre and genres with just one song in the top 50.
-9. Prints the total number of unique genres.
-10. Prints the correlation matrix and identifies positively and negatively correlated features.
-11. Compares average scores of 'danceability', 'loudness', and 'acousticness' between different genres.
-
-## Usage
-
-To run the script, you need to have Python installed along with the pandas, numpy, and opendatasets libraries. You can run the script using any Python IDE or from the command line using the command 'python script_name.py', replacing 'script_name.py' with the name of the script file.
-
-## Note
-
-This script assumes that you have the necessary permissions to download datasets from Kaggle. If you encounter any issues while downloading the dataset, please check your Kaggle API credentials.
+MIT
